@@ -95,7 +95,7 @@ export default function Home() {
             </ul>
           </div>
           <menu className=" bg-[#100e1d] w-full md:w-full md:m-auto px-5 md:flex md:flex-col md:items-center md:justify-center max-w-sm mt-12 gap-5 text-white">
-            <h2 className="text-2xl font-bold my-5">Today's Hightlights</h2>
+            <h2 className="text-2xl font-bold my-5">Today&apos;s Hightlights</h2>
             <div className="flex md:gap-5 md:grid md:grid-cols-2 md:w-full">
               <div className="p-4 cuadro flex flex-col items-center gap-4 bg-[#1e213a] ">
                 <h2>Wind status</h2>
