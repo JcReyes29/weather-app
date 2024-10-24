@@ -1,6 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-export default function Aside({ toggleMenu, className }) {
+export default function Aside() {
+    const [view, setView] = useState(false)
+
+    function toggleMenu() {
+        setView(!view);
+
+    }
     return (
         <>
             <aside className="relative fondo w-screen h-screen min-w-80 md:w-[30%]">
@@ -33,7 +39,7 @@ export default function Aside({ toggleMenu, className }) {
                 </div>
 
             </aside>
-            <nav className={`absolute fondo w-screen h-screen min-w-80 md:w-[30%] ${className}`}>
+            <nav className={`absolute fondo w-screen h-screen min-w-80 md:w-[30%] ${!view && 'hidden'}`}>
                 <div className="flex flex-col p-4 text-gray-300 gap-5">
                     <div onClick={toggleMenu} className="flex w-full justify-end px-2 text-5xl font-extralight cursor-pointer hover:text-white" >&times;</div>
                     <div className="flex justify-around">

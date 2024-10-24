@@ -1,19 +1,12 @@
 'use client'
 import Aside from "@/components/Aside";
-import { useState } from "react";
 
 export default function Home() {
-  const [view, setView] = useState(false)
-
-  function toggleMenu() {
-    setView(!view);
-
-  }
 
   return (
     <>
       <div className="fondo flex flex-col md:flex-row w-screen">
-        <Aside toggleMenu={toggleMenu} className={`${!view && 'hidden'}`} />
+        <Aside />
         <section className="bg-[#100e1d] w-full flex flex-col items-center md:w-[70%]">
 
           <div className="flex font-semibold justify-end items-end gap-5 h-20">
