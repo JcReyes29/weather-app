@@ -5,12 +5,6 @@
 .fondo {
     background: rgb(30 33 58);
 }
-
-.fondo-image {
-    background-image: url('/images/others/Cloud-background.png');
-    opacity: 10%;
-}
-
 .medida{
     width: 30%;
 }
