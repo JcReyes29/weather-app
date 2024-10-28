@@ -4,7 +4,6 @@ import dayjs from 'dayjs';
 const Aside = ({ newLocation, toggleMenu, className, weather }) => {
     const [city, setCity] = useState("");
         
-    }
     // Obtener texto del input//
     const onSubmit = (e) => {
         e.preventDefault();
@@ -68,6 +67,7 @@ const Aside = ({ newLocation, toggleMenu, className, weather }) => {
 
             </nav>
         </>
-    )
+    );
 
+}
 export default Aside;
