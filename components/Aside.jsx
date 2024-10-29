@@ -1,9 +1,14 @@
 import React, { useState } from 'react'
 import dayjs from 'dayjs';
+import useGeolocation from '@/hooks/useGeolocation';
 
 const Aside = ({ newLocation, toggleMenu, className, weather }) => {
     const [city, setCity] = useState("");
-        
+    const { getGeo, geolocation: geo } = useGeolocation()
+    const key = `ca566c012576a5f51d68d5b206b4f78c
+`
+    const url = `https://api.openweathermap.org/data/2.5/weather?lat=${geo.lat}&lon=${geo.long}&appid=${key}`
+
     // Obtener texto del input//
     const onSubmit = (e) => {
         e.preventDefault();
@@ -15,7 +20,7 @@ const Aside = ({ newLocation, toggleMenu, className, weather }) => {
     }
 
     const dt = weather?.dt;
-    const dt1 = dt*1000;
+    const dt1 = dt * 1000;
     const date = dayjs(dt1);
 
     return (
@@ -23,9 +28,9 @@ const Aside = ({ newLocation, toggleMenu, className, weather }) => {
             <aside className="relative fondo w-screen h-screen min-w-80 md:w-[30%]">
                 <div className="flex items-end w-full h-16 justify-around text-white">
                     <button onClick={toggleMenu} className="rounded-sm bg-gray-500 h-9 w-44">Search for Places</button>
-                    <div className="bg-gray-600 rounded-full p-2 cursor-pointer">
+                    <button onClick={getGeo} className="bg-gray-600 rounded-full p-2">
                         <img src="images/location.svg" height={25} width={25} alt="" />
-                    </div>
+                    </button>
                 </div>
                 <div className="flex flex-col items-center text-white gap-8">
                     <div className="flex w-full bg-cover bg-center h-52 lg:h-72 relative justify-center items-center">
