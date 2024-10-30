@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import dayjs from 'dayjs';
 import useGeolocation from '@/hooks/useGeolocation';
+import Icons from './Icons';
 
-const Aside = ({ newLocation, toggleMenu, className, weather }) => {
-    const [city, setCity] = useState("");
+const Aside = ({ newLocation, toggleMenu, className, weather, icon }) => {
+    const [city, setCity] = useState('');
     const { getGeo, geolocation: geo } = useGeolocation()
     const key = `ca566c012576a5f51d68d5b206b4f78c
 `
@@ -36,7 +37,7 @@ const Aside = ({ newLocation, toggleMenu, className, weather }) => {
                     <div className="flex w-full bg-cover bg-center h-52 lg:h-72 relative justify-center items-center">
                         <img className='absolute opacity-10' src='/images/others/Cloud-background.png' />
                         <div>
-                            <img width={150} src="/images/weather/02n.png" alt="" />
+                            <img width={150} src={Icons(icon)} alt="icon" />
                         </div>
                     </div>
                     <div className="flex items-center">

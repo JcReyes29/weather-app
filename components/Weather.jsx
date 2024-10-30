@@ -16,7 +16,8 @@ const Weather = () => {
     const [forecast, setForecast] = useState([]);
     const [loading, setLoading] = useState(false);
     const [view, setView] = useState(false);
-    const [location, setLocation] = useState('')
+    const [location, setLocation] = useState('');
+    const [icon, setIcon] = useState('');
 
     const getLocation = async (loc) => {
         setLoading(true);
@@ -29,7 +30,9 @@ const Weather = () => {
         fetchData(urlWeather)
             .then((rs) => {
                 console.log(rs);
-                setWeather(rs)
+                console.log(rs.weather[0].icon);
+                setWeather(rs);
+                setIcon(rs.weather[0].icon)
             })
             .catch((error) => {
                 console.log(error);
@@ -43,8 +46,9 @@ const Weather = () => {
 
         fetchData(urlForecast)
             .then((rs) => {
-                console.log(rs);
-                setForecast(rs)
+                console.log(rs.list);
+                setForecast(rs);
+                setIcon(rs.weather[0].main)
             })
             .catch((error) => {
                 console.log(error);
@@ -65,6 +69,7 @@ const Weather = () => {
                 toggleMenu={toggleMenu}
                 className={`${!view && 'hidden'}`}
                 weather={weather}
+                icon={icon}
             />
             <section className="bg-[#100e1d] w-full flex flex-col items-center md:w-[70%]">
 
