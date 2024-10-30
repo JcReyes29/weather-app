@@ -29,8 +29,6 @@ const Weather = () => {
 
         fetchData(urlWeather)
             .then((rs) => {
-                console.log(rs);
-                console.log(rs.weather[0].icon);
                 setWeather(rs);
                 setIcon(rs.weather[0].icon)
             })
@@ -46,7 +44,6 @@ const Weather = () => {
 
         fetchData(urlForecast)
             .then((rs) => {
-                console.log(rs.list);
                 setForecast(rs);
                 setIcon(rs.weather[0].main)
             })

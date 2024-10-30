@@ -43,7 +43,7 @@ export default function Main({ weather }) {
                     <div className="p-4 cuadro flex flex-col items-center gap-4 bg-[#1e213a]">
                         <h2>Visibility</h2>
                         <div className="flex gap-1 items-center">
-                            <h3 className="text-6xl font-bold">{(weather.visibility)?.toFixed(0)}</h3>
+                            <h3 className="text-6xl font-bold">{(weather.visibility)?.toFixed(0, 2)?.slice(0, 4)}</h3>
                             <h4 className="text-4xl">Km</h4>
                         </div>
 
